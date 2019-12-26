@@ -45,10 +45,13 @@ function fifth(str) {
 function fifthHomework(str) {
     const strWithoutSpaces = str.replace(/\s+/gi, '');
 
+    console.log(strWithoutSpaces);
+
     let arrForSorting = Array.from(strWithoutSpaces);
     arrForSorting.sort((a, b) => {
         return a - b;
     });
+    console.log(arrForSorting)
 
     let arrForMinAndMaxValues = [];
     arrForMinAndMaxValues.push(arrForSorting[arrForSorting.length - 1]);
@@ -59,4 +62,12 @@ function fifthHomework(str) {
     return strWithMinAndMaxValues;
 };
 console.log(fifthHomework('1 2 3 -5'));
+ 
 
+//Все работает , кроме того что при использовании метода Array.from отрицательные знаки чисел , если таковые имеются становятся отдельными 
+//элементами массива
+
+let a = '1 -2 -3 -4';
+let b = a.split(' - ');
+console.log(b);
+console.log(a)
